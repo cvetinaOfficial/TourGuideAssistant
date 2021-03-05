@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuideAssistant">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${AIzaSyBMq2-EwUMmrcxw_kGCMLqjQUt1L-9QaJQ}" />
         <activity android:name=".TripPreferences"></activity>
         <activity android:name=".TripOffers" />
         <activity android:name=".Register" />
@@ -24,5 +27,7 @@
             </intent-filter>
         </activity>
     </application>
+
+
 
 </manifest>
