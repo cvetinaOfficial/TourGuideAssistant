@@ -1,3 +1,4 @@
+/*
 package com.tourguideassistant.dbhelper;
 
 import android.content.ContentValues;
@@ -5,12 +6,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.tourguideassistant.bean.UserBean;
+import com.tourguideassistant.domain.entity.UserEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDbHelper extends DatabaseHelper<UserBean> implements IDbHelper<UserBean> {
+public class UserDbHelper extends DatabaseHelper<UserEntity> implements IDbHelper<UserEntity> {
     public static final String TABLE_NAME = "User";
     public static final String COL_ID = "Id";
     public static final String COL_NAME = "Name";
@@ -38,72 +39,72 @@ public class UserDbHelper extends DatabaseHelper<UserBean> implements IDbHelper<
     }
 
     @Override
-    public UserBean getById(String id) {
+    public UserEntity getById(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT  * " + " FROM " + TABLE_NAME + " WHERE " + COL_ID + " = '" + id + "'";
 
         if(id != null){
             Cursor cursor = db.rawQuery(query,null);
             cursor.close();
-            return (UserBean)cursor;
+            return (UserEntity)cursor;
         }
         return null;
     }
 
     @Override
-    public List<UserBean> getAll() {
+    public List<UserEntity> getAll() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT  * " + " FROM " + TABLE_NAME;
-        ArrayList<UserBean> userBeanArrayList = new ArrayList<>();
+        ArrayList<UserEntity> userEntityArrayList = new ArrayList<>();
         Cursor data = db.rawQuery(query,null);
 
         if (data.getCount() == 0) {
-            return userBeanArrayList;
+            return userEntityArrayList;
         }
 
         //обект
         while (data.moveToNext()) {
-            UserBean userBean = new UserBean();
-            userBean.id = data.getInt(1);
-            userBean.name = data.getString(2);
-            userBean.username = data.getString(3);
-            userBean.password = data.getString(4);
-            userBean.startingPoint = data.getString(5);
+            UserEntity userEntity = new UserEntity();
+            userEntity.id = data.getInt(1);
+            userEntity.name = data.getString(2);
+            userEntity.username = data.getString(3);
+            userEntity.password = data.getString(4);
+            userEntity.startingPoint = data.getString(5);
 
-            userBeanArrayList.add(userBean);
+            userEntityArrayList.add(userEntity);
         }
         data.close();
-        return userBeanArrayList;
+        return userEntityArrayList;
     }
 
     @Override
-    public String add(UserBean userBean) {
+    public String add(UserEntity userEntity) {
         SQLiteDatabase db = this.getWritableDatabase(); // its going to create the database and the table
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_NAME,userBean.getName());
-        contentValues.put(COL_USERNAME,userBean.getUsername());
-        contentValues.put(COL_PASSWORD,userBean.getPassword());
-        contentValues.put(COL_STARTING_POINT, userBean.getStartingPoint());
+        contentValues.put(COL_NAME, userEntity.getName());
+        contentValues.put(COL_USERNAME, userEntity.getUsername());
+        contentValues.put(COL_PASSWORD, userEntity.getPassword());
+        contentValues.put(COL_STARTING_POINT, userEntity.getStartingPoint());
         long result = getWritableDatabase().insert(TABLE_NAME,null,contentValues) ;
 
         return String.valueOf(result);
     }
 
     @Override
-    public int update(UserBean userBean) {
+    public int update(UserEntity userEntity) {
         SQLiteDatabase db = this.getWritableDatabase(); // its going to create the database and the table
-        UserBean userBeanEntity = this.getById(String.valueOf(userBean.id));
+        UserEntity userEntityEntity = this.getById(String.valueOf(userEntity.id));
 
         ContentValues contentValues = new ContentValues();
         String getUserBeanWhereClause = "_id = ?";
 
-        if(userBeanEntity != null){
-            contentValues.put(COL_NAME,userBean.getName());
-            contentValues.put(COL_USERNAME,userBean.getUsername());
-            contentValues.put(COL_PASSWORD,userBean.getPassword());
-            contentValues.put(COL_STARTING_POINT, userBean.getStartingPoint());
+        if(userEntityEntity != null){
+            contentValues.put(COL_NAME, userEntity.getName());
+            contentValues.put(COL_USERNAME, userEntity.getUsername());
+            contentValues.put(COL_PASSWORD, userEntity.getPassword());
+            contentValues.put(COL_STARTING_POINT, userEntity.getStartingPoint());
 
-            int affectedRows = getWritableDatabase().update(TABLE_NAME, contentValues, getUserBeanWhereClause, new String[]{String.valueOf(userBean.id)});
+            int affectedRows = getWritableDatabase().update(TABLE_NAME, contentValues, getUserBeanWhereClause, new String[]{String.valueOf(userEntity.id)});
 
             return affectedRows;
         }
@@ -115,12 +116,12 @@ public class UserDbHelper extends DatabaseHelper<UserBean> implements IDbHelper<
     @Override
     public int deleteById(String id) {
         SQLiteDatabase db = this.getWritableDatabase(); // its going to create the database and the table
-        UserBean userBeanEntity = this.getById(id);
+        UserEntity userEntityEntity = this.getById(id);
 
         ContentValues contentValues = new ContentValues();
         String getUserBeanWhereClause = "_id = ?";
 
-        if(userBeanEntity != null){
+        if(userEntityEntity != null){
             int affectedRows = getWritableDatabase().delete(TABLE_NAME, getUserBeanWhereClause, new String[]{id});
 
             return affectedRows;
@@ -130,3 +131,4 @@ public class UserDbHelper extends DatabaseHelper<UserBean> implements IDbHelper<
         }
     }
 }
+*/

@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TourGuideAssistant">
-        <activity android:name=".StartingPoint"></activity>
+        <activity android:name=".TripPreferences"></activity>
+        <activity android:name=".TripOffers" />
+        <activity android:name=".Register" />
+        <activity android:name=".Login" />
+        <activity android:name=".Landmark" />
+        <activity android:name=".StartingPoint" />
         <activity android:name=".UserPreferences" />
         <activity android:name=".MainActivity">
             <intent-filter>

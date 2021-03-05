@@ -1,9 +1,6 @@
 package com.tourguideassistant.dbhelper;
 
-import android.database.Cursor;
-
-import java.util.List;
-
+/*
 public interface IDbHelper<T> {
     public T getById(String id);
 
@@ -18,3 +15,4 @@ public interface IDbHelper<T> {
     public int deleteById(String id);
 
 }
+*/

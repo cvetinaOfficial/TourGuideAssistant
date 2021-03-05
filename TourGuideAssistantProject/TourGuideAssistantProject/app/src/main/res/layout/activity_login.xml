@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundTint="#FFFFFF"
+    tools:context=".Login">
+
+    <TextView
+        android:id="@+id/textProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="124dp"
+        android:fontFamily="@font/aguafina_script"
+        android:text="@string/login_title"
+        android:textAppearance="@style/Theme.TourGuideAssistant"
+        android:textColor="#3EC144"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:typeface="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTexUsername"
+        android:layout_width="269dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="72dp"
+        android:ems="16"
+        android:fontFamily="@font/aguafina_script"
+        android:hint="Потребителско име"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textSize="16sp"
+        android:typeface="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textProfile" />
+
+    <EditText
+        android:id="@+id/editTexPassword"
+        android:layout_width="269dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="52dp"
+        android:ems="16"
+        android:fontFamily="@font/aguafina_script"
+        android:hint="Парола"
+        android:inputType="textPassword"
+        android:singleLine="false"
+        android:textSize="16sp"
+        android:typeface="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTexUsername" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="226dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="38dp"
+        android:background="#4FA131"
+        android:drawableLeft="@drawable/ic_baseline_person_add_alt_1_30"
+        android:drawableTint="#FFFFFF"
+        android:paddingLeft="20dp"
+        android:text="Регистристрация"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="226dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="56dp"
+        android:background="#4FA131"
+        android:drawableLeft="@drawable/ic_baseline_login_30"
+        android:drawableTint="#FFFFFF"
+        android:paddingLeft="20dp"
+        android:text="Вход"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTexPassword" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
