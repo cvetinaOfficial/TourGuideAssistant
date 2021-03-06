@@ -29,7 +29,6 @@
         android:layout_height="54dp"
         android:layout_marginTop="40dp"
         android:ems="16"
-        android:fontFamily="@font/aguafina_script"
         android:hint="Потребителско име"
         android:inputType="textPersonName"
         android:singleLine="false"

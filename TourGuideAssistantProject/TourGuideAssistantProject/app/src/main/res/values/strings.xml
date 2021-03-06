@@ -14,9 +14,7 @@
 
     <string-array name="categories">
         <item name="Природни" />
-        <item name="Исторически" />
-        <item name="Културни" />
-        <item name="Антропогенни" />
+        <item name="Културно-Исторически" />
     </string-array>
 
 
