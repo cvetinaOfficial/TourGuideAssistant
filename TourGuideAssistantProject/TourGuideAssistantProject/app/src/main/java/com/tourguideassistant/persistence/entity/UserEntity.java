@@ -18,8 +18,7 @@ public class UserEntity implements Serializable {
 
     public UserEntity() { }
 
-    public UserEntity(@NonNull Integer id, String name, @NonNull String username,@NonNull String password, String startingPoint) {
-        this.id = id;
+    public UserEntity(@NonNull String username,@NonNull String password, String name, String startingPoint) {
         this.name = name;
         this.username = username;
         this.password = password;

@@ -29,9 +29,9 @@ public class UserRepository {
 
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.
-    public void insert(UserEntity userEntity) {
+    public void registerUser(UserEntity userEntity) {
         TourGuideAssistantDb.databaseWriteExecutor.execute(() -> {
-            userDao.insertUser(userEntity);
+            userDao.registerUser(userEntity);
         });
     }
 
@@ -47,8 +47,21 @@ public class UserRepository {
         });
     }
 
-    public LiveData<UserEntity> getUserEntityLiveData(String username, String password){
-        LiveData<UserEntity> user = userDao.getUserByUsernameAndPassword(username, password);
+    public LiveData<UserEntity> findUserByUsername(String username){
+        LiveData<UserEntity> user = userDao.findUserByUsername(username);
+
         return user;
+    }
+
+    public UserEntity getUserEntityLiveData(String username, String password){
+        final UserEntity[] userEntity = new UserEntity[1];
+        TourGuideAssistantDb.databaseWriteExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                userEntity[0] = userDao.getUserByUsernameAndPassword(username, password);
+            }
+        });
+
+        return userEntity[0];
     }
 }

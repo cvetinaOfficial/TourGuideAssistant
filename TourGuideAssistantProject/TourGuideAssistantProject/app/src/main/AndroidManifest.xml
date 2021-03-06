@@ -3,6 +3,7 @@
     package="com.tourguideassistant">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,23 +14,22 @@
         android:theme="@style/Theme.TourGuideAssistant">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${AIzaSyBMq2-EwUMmrcxw_kGCMLqjQUt1L-9QaJQ}" />
+            android:value="AIzaSyBMq2-EwUMmrcxw_kGCMLqjQUt1L-9QaJQ" />
         <activity android:name=".TripPreferences"></activity>
         <activity android:name=".TripOffers" />
         <activity android:name=".Register" />
-        <activity android:name=".Login" />
-        <activity android:name=".Landmark" />
-        <activity android:name=".StartingPoint" />
-        <activity android:name=".UserPreferences" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Landmark" />
+        <activity android:name=".StartingPoint" />
+        <activity android:name=".UserPreferences" />
+        <activity android:name=".MainActivity">
+        </activity>
     </application>
-
-
 
 </manifest>

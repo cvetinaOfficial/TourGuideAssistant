@@ -69,6 +69,7 @@
         android:paddingLeft="20dp"
         android:text="Регистристрация"
         android:textColor="@color/white"
+        android:onClick="goToRegistration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

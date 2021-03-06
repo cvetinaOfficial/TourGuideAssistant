@@ -22,6 +22,7 @@ import com.tourguideassistant.persistence.entity.LandmarkEntity;
 import com.tourguideassistant.persistence.entity.RegionEntity;
 import com.tourguideassistant.persistence.entity.TypeEntity;
 import com.tourguideassistant.persistence.entity.UpcomingTripEntity;
+import com.tourguideassistant.persistence.entity.UpcomingTrip_LandmarkEntity;
 import com.tourguideassistant.persistence.entity.UserEntity;
 import com.tourguideassistant.persistence.entity.UserHistoryEntity;
 import com.tourguideassistant.persistence.entity.UserPreferenceEntity;
@@ -35,6 +36,7 @@ import java.util.concurrent.Executors;
 
 @Database(version = 1, entities = {CategoryEntity.class, TypeEntity.class, UserPreferenceEntity.class,
         FavouriteLandmarkEntity.class, LandmarkEntity.class, RegionEntity.class,
+        UpcomingTrip_LandmarkEntity.class,
         UpcomingTripEntity.class, UserHistoryEntity.class, UserEntity.class}, exportSchema = false)
 @TypeConverters({CategoryTypeConverter.class, LandmarkTypeConverter.class,
         RegionTypeConverter.class, DateTypeConverter.class})

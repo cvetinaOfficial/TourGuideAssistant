@@ -22,7 +22,7 @@ public interface UserDao {
     LiveData<List<UserEntity>> getAllUsers();
 
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    void insertUser(UserEntity userEntity);
+    void registerUser(UserEntity userEntity);
 
     @Delete
     void deleteUser(UserEntity userEntity);
@@ -33,11 +33,14 @@ public interface UserDao {
     @Query("SELECT * FROM user WHERE id = :Id")
     public UserEntity findUserById(int Id);
 
+    @Query("SELECT * FROM user WHERE username = :username")
+    public LiveData<UserEntity> findUserByUsername(String username);
+
     @Query("SELECT * FROM user WHERE id = :id")
     public LiveData<UserEntity> loadUserById(int id);
 
     @Query("SELECT * FROM user where username = :username and password = :password")
-    public LiveData<UserEntity> getUserByUsernameAndPassword(String username, String password);
+    public UserEntity getUserByUsernameAndPassword(String username, String password);
 
     @Transaction
     @Query("SELECT * FROM user")

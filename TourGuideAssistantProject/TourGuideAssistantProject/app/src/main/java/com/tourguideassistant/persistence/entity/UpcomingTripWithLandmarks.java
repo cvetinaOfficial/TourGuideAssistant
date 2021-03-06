@@ -12,7 +12,9 @@ public class UpcomingTripWithLandmarks {
     @Relation(
             parentColumn = "id",
             entityColumn = "id",
-            associateBy = @Junction(UpcomingTrip_LandmarkEntity.class)
+            associateBy = @Junction(value = UpcomingTrip_LandmarkEntity.class,
+                    parentColumn = "upcomingTripId",
+                    entityColumn = "landmarkId")
     )
     public List<LandmarkEntity> landmarkEntities;
 }
